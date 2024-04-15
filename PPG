@@ -1,0 +1,39 @@
+int gamesPlayed = 5;
+
+int[] lebronScores = new int[] {23,46,27,34,39};
+int[] curryScores = new int[] {28,21,36,18,22};
+int[] jokerScores = new int[] {31,30,21,18,24};
+int[] kdScores = new int[] {35,15,19,28,37};
+
+int[] pointsTotal = new int[10];
+
+string[] nbaPlayer = new string[] {"Lebron James", "Steph Curry", "Nicola Jokic", "Kevin Durant"};
+
+foreach (string name in nbaPlayer)
+{
+    string currentPlayer = name;
+
+    if (currentPlayer == "Lebron James")
+        pointsTotal = lebronScores;
+
+    else if (currentPlayer == "Steph Curry")
+        pointsTotal = curryScores;
+    
+    else if (currentPlayer == "Nicola Jokic")
+        pointsTotal = jokerScores;
+
+    else if (currentPlayer == "Kevin Durant")
+        pointsTotal = kdScores;
+
+        int prevFiveScores = 0;
+        decimal ppgAvg = 0;
+    
+    foreach (int score in pointsTotal)
+        prevFiveScores +=  score;
+
+    ppgAvg = (decimal) (prevFiveScores) / gamesPlayed ;
+
+
+    Console.WriteLine($"{name} has scored {prevFiveScores} total points in the last 5 games and is averaging {ppgAvg} points over the last 5 games.\n" );
+
+}
